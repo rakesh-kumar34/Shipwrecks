@@ -1,0 +1,578 @@
+<!DOCTYPE html >
+<head>
+   <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+   <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+   <title>Glossary</title>
+   <style>
+      html,body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif !important;
+      }
+      .nav-link{
+      font-size: 16px !important;
+      padding: 0.5em 0.5em !important;
+      }
+      #glossaryDiv {
+      margin: 0 auto;
+      margin-top: 25px;
+      margin-bottom: 25px;
+      width: 70%;
+      }
+      #glossary-table{
+      margin-top: 20px !important;
+      }
+      .navbargradient {
+      background: #ffffff;/* Old browsers */
+      background: -moz-linear-gradient(top, #ffffff 0%, #e5e5e5 100%);/* FF3.6-15 */
+      background: -webkit-linear-gradient(top, #ffffff 0%, #e5e5e5 100%);/* Chrome10-25,Safari5.1-6 */
+      background: linear-gradient(to bottom, #ffffff 0%, #e5e5e5 100%);/* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e5e5e5', GradientType=0);/* IE6-9 */
+      }
+   </style>
+   <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+   <script src="https://npmcdn.com/tether@1.2.4/dist/js/tether.min.js"></script> 
+   <script type="text/javascript" src="https://cdn.datatables.net/v/bs-3.3.7/jq-2.2.4/jszip-3.1.3/pdfmake-0.1.27/dt-1.10.15/b-1.3.1/b-colvis-1.3.1/b-flash-1.3.1/b-html5-1.3.1/b-print-1.3.1/fc-3.2.2/fh-3.1.2/kt-2.2.1/r-2.1.1/rg-1.0.0/sc-1.4.2/se-1.2.2/datatables.min.js"></script>
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs-3.3.7/jq-2.2.4/jszip-3.1.3/pdfmake-0.1.27/dt-1.10.15/b-1.3.1/b-colvis-1.3.1/b-flash-1.3.1/b-html5-1.3.1/b-print-1.3.1/fc-3.2.2/fh-3.1.2/kt-2.2.1/r-2.1.1/rg-1.0.0/sc-1.4.2/se-1.2.2/datatables.min.css"/>
+   <script type="text/javascript">
+      $(document).ready(function() {
+       $('#glossary-table').DataTable( {
+           dom:'Bfrtip',
+           paging: false,
+           searching: false,
+           lengthChange: false,
+           responsive: true,
+           fixedHeader: true,
+           buttons: [
+                'copyHtml5',
+                 
+               {
+                 extend: 'excelHtml5',
+                 title: 'Glossary_Export'
+               },
+               {
+                 extend: 'csvHtml5',
+                 title: 'Glossary_Export'
+      
+               },
+               {
+                 extend: 'pdfHtml5',
+                 title: 'Glossary_Export'
+               },
+           ]
+       } );
+      } );
+   </script>
+</head>
+<body class="animated fadeInRight">
+   <div>
+      <nav class="navbar navbar-toggleable-md navbar-light bg-faded navbargradient">
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+      <a class="navbar-brand" href="index.php" style="font-weight: bold">Modern Shipwrecks</a>
+      <div class="collapse navbar-collapse" id="navbarToggle">
+        <ul class="navbar-nav mr-auto mt-2 mt-md-0">
+          <li class="nav-item active">
+            <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="data-download.php">Data</a>
+          </li>
+          <li class="nav-item">
+	    <a class="nav-link" href="analyze.php">Analyze</a>
+          </li>
+          <li class="nav-item dropdown">
+		        <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		          Resources
+		        </a>
+		        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+		          <a class="dropdown-item" href="pmsimages.php">Photos</a>
+		          <a class="dropdown-item" href="pmsdocs.php">Documents</a>
+		          <a class="dropdown-item" href="glossary.html">Ship Glossary</a>
+		          <a class="dropdown-item" href="metadata.html">Data Dictionary</a>
+		          <a class="dropdown-item" href="astrolabes.php">Astrolabes</a>		          
+		        </div>
+		      </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">About</a>
+          </li>      
+          <li class="nav-item">
+            <a class="nav-link" href="contact.php">Contact</a>
+          </li>
+        </ul>
+      </div>
+      <div>
+        <a href="https://www.tamu.edu/"><img border="0" alt="TAMU" src="../images/Capture.png" width="200px"></a>
+      </div>
+    </nav>
+   </div>
+   <div id="glossaryDiv">
+      <table border="1" cellspacing="0" class="table table-striped table-bordered" id="glossary-table" width="100%">
+         <thead style="top:0; background-color:lightgrey;">
+            <tr>
+               <th width="20%">Database Field</th>
+               <th width="45%">Explanation</th>
+               <th width="35%">Values</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <td width="20%">No</td>
+               <td width="45%">a unique database number</td>
+               <td width="35%">positive integer</td>
+            </tr>
+            <tr>
+               <td>Site</td>
+               <td>name designation of the shipwreck or site</td>
+               <td>text</td>
+            </tr>
+            <tr>
+               <td>Description</td>
+               <td>general description of shipwreck remains</td>
+               <td>text</td>
+            </tr>
+            <tr>
+               <td>Looted or Salvaged</td>
+               <td>indicates if the shipwreck was either looted or salvaged</td>
+               <td>Yes, No, Undetermined, Not Reported?</td>
+            </tr>
+            <tr>
+               <td>Surveyed or Excavated</td>
+               <td>indicates if the shipwreck was either surveyed or excavated</td>
+               <td>Yes, No, Undetermined</td>
+            </tr>
+            <tr>
+               <td>Timbers</td>
+               <td>indicates if timbers are present</td>
+               <td>Yes, No, Undetermined</td>
+            </tr>
+            <tr>
+               <td>Hull Remains Published</td>
+               <td>indicates if information regarding the hull remains have been published</td>
+               <td>Yes, No, Undetermined</td>
+            </tr>
+            <tr>
+               <td>Status</td>
+               <td>additional information regarding where the shipwreck is and any disturbances to the site (such as salvaging or excavation)</td>
+               <td>text</td>
+            </tr>
+            <tr>
+               <td>Tentative identification</td>
+               <td>indicates if ship identification is tentative, if so the tentative ship name is listed</td>
+               <td>text</td>
+            </tr>
+            <tr>
+               <td>Probable Shipping Tradition</td>
+               <td>cultural shipbuilding tradition</td>
+               <td>Asian, Dutch, English, French, Genoese, Iberian, Mediterranean, North Atlantic, Northern European, Portuguese, Spanish, UK, Undetermined</td>
+            </tr>
+            <tr>
+               <td>Lost E</td>
+               <td>the earliest date the ship may have been lost</td>
+               <td>integer</td>
+            </tr>
+            <tr>
+               <td>Lost L</td>
+               <td>the latest date the ship may have been lost</td>
+               <td>integer</td>
+            </tr>
+            <tr>
+               <td>Dated</td>
+               <td>the method by which the shipwreck was dated</td>
+               <td>text</td>
+            </tr>
+            <tr>
+               <td>Lost - Country</td>
+               <td>the country nearest to where the ship was lost</td>
+               <td>text</td>
+            </tr>
+            <tr>
+               <td>Lost - Place</td>
+               <td>the place, usually city or province, nearest to where the ship was lost</td>
+               <td>text</td>
+            </tr>
+            <tr>
+               <td>Type</td>
+               <td>type of ship</td>
+               <td>text</td>
+            </tr>
+            <tr>
+               <td>Built</td>
+               <td>earliest date when the ship may have been built</td>
+               <td>text</td>
+            </tr>
+            <tr>
+               <td>Dated</td>
+               <td>latest date when the ship may have been built</td>
+               <td>text</td>
+            </tr>
+            <tr>
+               <td>Probable place built</td>
+               <td>probable place where ship was built</td>
+               <td>text</td>
+            </tr>
+            <tr>
+               <td>Probable route</td>
+               <td>probable route the ship was sailing</td>
+               <td>text</td>
+            </tr>
+            <tr>
+               <td>Probable nationality</td>
+               <td>probable ship nationality</td>
+               <td>text</td>
+            </tr>
+            <tr>
+               <td>Ballast Pile / Tumulus</td>
+               <td>presence and size of ballast pile</td>
+               <td>text</td>
+            </tr>
+            <tr>
+               <td>Max. beam [m]</td>
+               <td>maximum beam length in meters</td>
+               <td>integer, -9999 indicates undeteremined</td>
+            </tr>
+            <tr>
+               <td>Keel length [m]</td>
+               <td>keel length in meters</td>
+               <td>integer, -9999 indicates undeteremined</td>
+            </tr>
+            <tr>
+               <td>Length overall [m]</td>
+               <td>length overall in meters</td>
+               <td>integer, -9999 indicates undeteremined</td>
+            </tr>
+            <tr>
+               <td>No. Masts</td>
+               <td>number of masts</td>
+               <td>integer, -9999 indicates undeteremined</td>
+            </tr>
+            <tr>
+               <td>Tonnage</td>
+               <td>tonnage</td>
+               <td>integer, -9999 indicates undeteremined</td>
+            </tr>
+            <tr>
+               <td>Displacemeent</td>
+               <td>displacement</td>
+               <td>integer, -9999 indicates undeteremined</td>
+            </tr>
+            <tr>
+               <td>No. Decks</td>
+               <td>number of decks</td>
+               <td>integer, -9999 indicates undeteremined</td>
+            </tr>
+            <tr>
+               <td>Length on deck [m]</td>
+               <td>length on deck in meters</td>
+               <td>integer, -9999 indicates undeteremined</td>
+            </tr>
+            <tr>
+               <td>Flat of the floor [m]</td>
+               <td>flat of the floor amidships in meters</td>
+               <td>integer, -9999 indicates undeteremined</td>
+            </tr>
+            <tr>
+               <td>Transom [m]</td>
+               <td>width of the transom in meters</td>
+               <td>integer, -9999 indicates undeteremined</td>
+            </tr>
+            <tr>
+               <td>Entries [m]</td>
+               <td>height of the entries in meters</td>
+               <td>integer, -9999 indicates undeteremined</td>
+            </tr>
+            <tr>
+               <td>Runs [m]</td>
+               <td>height of the runs in meters</td>
+               <td>integer, -9999 indicates undeteremined</td>
+            </tr>
+            <tr>
+               <td>Depth of hold [m]</td>
+               <td>depth of hold in meters</td>
+               <td>integer, -9999 indicates undeteremined</td>
+            </tr>
+            <tr>
+               <td>Keel Sided [cm]</td>
+               <td>keel sided dimension in centimeters</td>
+               <td>integer, -9999 indicates undeteremined</td>
+            </tr>
+            <tr>
+               <td>Keel molded [cm]</td>
+               <td>keel molded dimension in centimeters</td>
+               <td>integer, -9999 indicates undeteremined</td>
+            </tr>
+            <tr>
+               <td>Keelson Sided [cm]</td>
+               <td>keelson sided dimension in centimeters</td>
+               <td>integer, -9999 indicates undeteremined</td>
+            </tr>
+            <tr>
+               <td>Keelson molded [cm]</td>
+               <td>keelson molded dimention in centimeters</td>
+               <td>integer, -9999 indicates undeteremined</td>
+            </tr>
+            <tr>
+               <td>Maststep</td>
+               <td>dimensions and description of the mastestep</td>
+               <td>text</td>
+            </tr>
+            <tr>
+               <td>Sternpost</td>
+               <td>sternpost preserved or not</td>
+               <td>text</td>
+            </tr>
+            <tr>
+               <td>Sternpost Sided [cm]</td>
+               <td>sternpost molded dimension in centimeters</td>
+               <td>integer, -9999 indicates undeteremined</td>
+            </tr>
+            <tr>
+               <td>Sternpost molded [cm]</td>
+               <td>sternpost sided dimension in centimeters</td>
+               <td>integer, -9999 indicates undeteremined</td>
+            </tr>
+            <tr>
+               <td>Stem</td>
+               <td>stem post preserved or not</td>
+               <td>text</td>
+            </tr>
+            <tr>
+               <td>Stem sided [cm]</td>
+               <td>stem sided dimension in centimeters</td>
+               <td>integer, -9999 indicates undeteremined</td>
+            </tr>
+            <tr>
+               <td>Stem molded [cm]</td>
+               <td>stem molded dimension in centimeters</td>
+               <td>integer, -9999 indicates undeteremined</td>
+            </tr>
+            <tr>
+               <td>Frames [No.]</td>
+               <td>description of pre-designed frames</td>
+               <td>text</td>
+            </tr>
+            <tr>
+               <td>Floors sided [cm]</td>
+               <td>floors sided dimension in centimeters</td>
+               <td>integer, -9999 indicates undeteremined</td>
+            </tr>
+            <tr>
+               <td>Floors molded [cm]</td>
+               <td>floors molded dimension in centimeters</td>
+               <td>integer, -9999 indicates undeteremined</td>
+            </tr>
+            <tr>
+               <td>Room and Space [cm]</td>
+               <td>room and space value in centimeters</td>
+               <td>integer, -9999 indicates undeteremined</td>
+            </tr>
+            <tr>
+               <td>1st Futtocks sided [cm]</td>
+               <td>first futtocks  sided dimension in centimeters</td>
+               <td>integer, -9999 indicates undeteremined</td>
+            </tr>
+            <tr>
+               <td>1st Futtocks molded [cm]</td>
+               <td>first futtocks molded dimension in centimeters</td>
+               <td>integer, -9999 indicates undeteremined</td>
+            </tr>
+            <tr>
+               <td>Other Futtocks sided [cm]</td>
+               <td>other futtocks sided dimension in centimeters</td>
+               <td>integer, -9999 indicates undeteremined</td>
+            </tr>
+            <tr>
+               <td>Other Futtocks molded [cm]</td>
+               <td>other futtocks molded dimension in centimeters</td>
+               <td>integer, -9999 indicates undeteremined</td>
+            </tr>
+            <tr>
+               <td>Y-Frames [cm]</td>
+               <td>y-frames molded dimension in centimeters</td>
+               <td>integer, -9999 indicates undeteremined</td>
+            </tr>
+            <tr>
+               <td>Planking [cm]</td>
+               <td>planking thickness in centimeters</td>
+               <td>integer, -9999 indicates undeteremined</td>
+            </tr>
+            <tr>
+               <td>Stringers sided [cm]</td>
+               <td>stringers sided dimension in centimeters</td>
+               <td>integer, -9999 indicates undeteremined</td>
+            </tr>
+            <tr>
+               <td>Stringers molded [cm]</td>
+               <td>stringers molded  in centimeters</td>
+               <td>integer, -9999 indicates undeteremined</td>
+            </tr>
+            <tr>
+               <td>Wales sided [cm]</td>
+               <td>wales sided dimension in centimeters</td>
+               <td>integer, -9999 indicates undeteremined</td>
+            </tr>
+            <tr>
+               <td>Wales molded [cm]</td>
+               <td>wales molded dimension in centimeters</td>
+               <td>integer, -9999 indicates undeteremined</td>
+            </tr>
+            <tr>
+               <td>Clamps sided [cm]</td>
+               <td>clamps sided dimension in centimeters</td>
+               <td>integer, -9999 indicates undeteremined</td>
+            </tr>
+            <tr>
+               <td>Clamps molded [cm]</td>
+               <td>length of clamps molded in centimeters</td>
+               <td>clamps molded dimension in centimeters</td>
+            </tr>
+            <tr>
+               <td>Ceiling</td>
+               <td>ceiling planking preserved or not, brief description</td>
+               <td>text</td>
+            </tr>
+            <tr>
+               <td>Riders</td>
+               <td>rider timbers preserved or not, brief description</td>
+               <td>text</td>
+            </tr>
+            <tr>
+               <td>Stanchions</td>
+               <td>stanchions preserved or not, brief description</td>
+               <td>text</td>
+            </tr>
+            <tr>
+               <td>Scarves</td>
+               <td>scarves preserved or not, brief description</td>
+               <td>text</td>
+            </tr>
+            <tr>
+               <td>Tool marks</td>
+               <td>tool marks preserved or not, brief description</td>
+               <td>text</td>
+            </tr>
+            <tr>
+               <td>Caulking</td>
+               <td>caulking preserved or not, brief description</td>
+               <td>text</td>
+            </tr>
+            <tr>
+               <td>Keel/Keel &amp; Keel/Posts Scarves</td>
+               <td>keel scarves preserved or not</td>
+               <td>text</td>
+            </tr>
+            <tr>
+               <td>Stern Knee (Couce de Popa)</td>
+               <td>stern knee preserved or not</td>
+               <td>Yes, Yes atypical, No, Undetermined, Not reported</td>
+            </tr>
+            <tr>
+               <td>Stern deadwood knee (coral)</td>
+               <td>stern deadwood knee preserved or not</td>
+               <td>Yes, No, Undetermined, Not Reported</td>
+            </tr>
+            <tr>
+               <td>Bow Knee (Couce de Proa)</td>
+               <td>bow knee preserved or not</td>
+               <td>Yes, No, Undetermined, Not Reported</td>
+            </tr>
+            <tr>
+               <td>Square or Round Tuck</td>
+               <td>stern shape</td>
+               <td>Square, Round, Undetermined, Not Reported</td>
+            </tr>
+            <tr>
+               <td>Pre-assembled frames</td>
+               <td>presence of pre-designed frames</td>
+               <td>Yes, No, Undetermined, Not Reported</td>
+            </tr>
+            <tr>
+               <td>Construction marks</td>
+               <td>presence of construction marks</td>
+               <td>Yes, No, Undetermined, Not Reported</td>
+            </tr>
+            <tr>
+               <td>Floors scarved to futtocks (shape / fasteners)</td>
+               <td>brief description</td>
+               <td>text</td>
+            </tr>
+            <tr>
+               <td>Planking (carvel / carvel D / lapstrake / clinker)</td>
+               <td>type of planking</td>
+               <td>Carvel, Carvel/Double Planking, Lapstrake, Cl/Mix, Undetermine, Not Reported</td>
+            </tr>
+            <tr>
+               <td>Carved garboard</td>
+               <td>carved garboard</td>
+               <td>Yes, No, Undetermined, Not Reported</td>
+            </tr>
+            <tr>
+               <td>Planking/Frames fastening pattern</td>
+               <td>planking/frames fastening pattern</td>
+               <td>Treenails, Nails, Both, Undetermined, Not Reported</td>
+            </tr>
+            <tr>
+               <td>Y-Frames tabbed into couce or coral</td>
+               <td>y-frames tabbed into couce or coral</td>
+               <td>Yes, No, Undetermined, Not Reported</td>
+            </tr>
+            <tr>
+               <td>Keelson (notched?)</td>
+               <td>keelson type</td>
+               <td>Yes, No, Undetermined, Not Reported</td>
+            </tr>
+            <tr>
+               <td>Maststep</td>
+               <td>maststep type</td>
+               <td>Expanded Keelson, Sister Keelsons, Undetermined</td>
+            </tr>
+            <tr>
+               <td>Maststep butresses and bottom stringers</td>
+               <td>presence of butresses and bottom stringers</td>
+               <td>Yes, No, Undetermined, Not Reported</td>
+            </tr>
+            <tr>
+               <td>Fillers between butresses</td>
+               <td>presence of fillers between butresses</td>
+               <td>Yes, No, Undetermined, Not Reported</td>
+            </tr>
+            <tr>
+               <td>Fillers between futtocks</td>
+               <td>presence of fillers between futtocks</td>
+               <td>Yes, No, Undetermined, Not Reported</td>
+            </tr>
+            <tr>
+               <td>Deadeyes or straps</td>
+               <td>shape of deadeys or straps</td>
+               <td>Heart, Teardrop D, Round D, Undetermined, Not Reported</td>
+            </tr>
+            <tr>
+               <td>Guns</td>
+               <td>guns are present</td>
+               <td>Yes, No, Undetermined (Not reported?)</td>
+            </tr>
+            <tr>
+               <td>Shot</td>
+               <td>shot is present</td>
+               <td>Yes, No, Undetermined</td>
+            </tr>
+            <tr>
+               <td>Anchors</td>
+               <td>anchors are present</td>
+               <td>Yes, No, Undetermined</td>
+            </tr>
+            <tr>
+               <td>Bells</td>
+               <td>bells are present</td>
+               <td>Yes, No, Undetermined</td>
+            </tr>
+         </tbody>
+      </table>
+   </div>
+</body>
+</html>
